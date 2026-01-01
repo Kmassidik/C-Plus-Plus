@@ -39,3 +39,14 @@
 
 # debug information files
 *.dwo
+
+# Build output
+build/
+*/build/
+
+# Compiled binaries
+*.out
+*.exe
+
+# OS junk
+.DS_Store
