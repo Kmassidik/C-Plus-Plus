@@ -1,23 +1,23 @@
-#include <iostream>
-using namespace std;
+#include "iostream"
 
-void modifyByReferences(int &ref) { ref += 100; }
+void increseBy100(int &ref) { ref += 100; }
 
 int main() {
-  int x = 10;
-  int &ref = x;
+  int value = 50;
+  int &alias = value;
 
-  cout << "x = " << x << "\n";
-  cout << "ref = " << ref << "\n";
+  std::cout << "Before: value = " << value << "\n";
 
-  ref = 20;
-  cout << "Aftrer ref = 20: x = " << x << "\n";
+  alias = 200;
+  std::cout << "After alias = 200 -> value = " << value << "\n";
 
-  modifyByReferences(ref);
-  cout << "After function: x = " << x << "\n";
+  increseBy100(alias);
+  std::cout << "After increseBy100 -> value = " << value << "\n";
 
-  // int& badRef;  // ERROR: references must be initialized
-  // ref = someOtherVar;  // ERROR: cannot rebind reference
+  // Dangerous / invalid patterns:
+  // int& bad;
+  // int x = 1, y = 2;
+  // alias = y;
 
   return 0;
 }
