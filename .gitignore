@@ -51,3 +51,6 @@ build/
 # OS junk
 .DS_Store
 
+# Binary
+output
+/output
